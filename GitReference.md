@@ -97,9 +97,7 @@ you will need to clone it to have a copy locally.
   branch. Use `git merge` to merge from `master`, instead. Some teams do
   not however recommend merging `master` to your branch (but ask you to rebase instead)
   because merging creates what is called a merge commit.
-  * Cherry pick a change from another branch, instead of merging all of it. i.e.
-  Instead of all changes "till" a specific commit (or the HEAD)
-  (which is what `git merge` would do), just pick *only* a specific commit.
+  * Cherry pick (merge a specific commit) from another branch, instead of merging all of it.
     - `$git cherry-pick SHA1`
   * See this [link](http://git-scm.com/book/en/Git-Branching-Basic-Branching-and-Merging)
   for more details on branching in git.
