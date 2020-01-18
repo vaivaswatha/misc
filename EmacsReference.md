@@ -1,0 +1,51 @@
+## A list of useful Emacs shortcuts
+
+- `M-x` For entering commands (gdb, shell, compile etc).
+- `C-g` abort a command.
+- `M-.` Find tags. (must run etags before doing this).
+- `C-x C-s` Save buffer.
+- `C-x C-w` Save as
+- `C-x C-c` Exit emacs
+- `C-x 1` Show only single buffer, (full window).
+- `C-x 2` Split window to show two buffers (horizontal).
+- `C-x 3` Split window into two vertical buffers.
+- `C-x k` Kill current buffer.
+- `C-x 0` Kill window (not buffer)
+- `C-x o` Activate other window.
+- `C-x ->` Next window (or buffer).
+- `C-x <-` Previous window (or buffer). (`->` and `<-` are the arrow keys).
+- `C-Shift-_` Undo.
+- `C-space` Start selection. (use arrow keys to go to end of selection).
+- `C-space-space` Start selection (shows the selection also - Transient Selection).
+- `C-w` Cut (delete) selected text.
+- `M-w` Copy selection.
+- `C-y` Paste.
+- `M-;` Start a comment or comment the selected text.
+- `M-$` Check current word (on which cursor is present) with iSpell.
+- `C-x d` Open directory.
+- `C-x C-f` Open or create file.
+- `C-q tab` Force tab.
+- `M-!` Execute shell command.
+- `M-/` Complete word.
+- `F10` Menu.
+- `M-g M-g` Goto specific line
+- `M-<` Goto beginning of file.
+- `M->` Goto end of file.
+- `C-x s` Save all buffers
+- `C-k` Delete current line
+- `C-l` Reposition screen for current line
+- `C-s` Search for a pattern. Can you repeatedly to continue search.
+- `C-r` Search for a pattern in the backward direction. Can you repeatedly to continue search
+- `C-x C-x` Goto previous cursor position (that was marked with a C^space or other means)
+- `C-c C-z` Open interactive python interpreter.
+- `M-n` When viewing a .diff file, go to the next diff.
+- `M-p` When viewing a .diff file, go to the previous diff.
+- `C-c ! l` List all flycheck errors
+- `C-c ! n` Next flycheck error
+- `C-c C-t` Show type of variable (in OCaml merlin mode).
+- Replace string: Hit `M-x` and type command "replace-string" hit ENTER. Can also do "query-replace" to do an interactive replace.
+- Find matching braces:	Hit M-x and type "forward-sexp" or "backward-sexp". Cursor should be at the right braces.
+- ediff-buffers: Hit `M-x` and type "ediff-buffers". Its a visual diff tool.
+
+- `emacs -nw` Open emacs in non-X mode. (can be done by unsetting $DISPLAY also).
+
