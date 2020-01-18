@@ -27,8 +27,8 @@
 
 If you want to work on an existing git repository (say from GitHub),
 you will need to clone it to have a copy locally.
-  - `git clone https://github.com/vaivaswatha/puttu.git puttu` will clone *this*
-  repository  into a directory called `puttu`.
+  - `git clone https://github.com/vaivaswatha/misc.git misc` will clone *this*
+  repository  into a directory called `misc`.
   - You can make clone of repositories already on your disk or remote
   repositories over SSH. Just replace the URL above with a path name or an ssh
   string respectively.
@@ -90,12 +90,12 @@ you will need to clone it to have a copy locally.
   in `branch1` and commit it. Then switch to master and merge `branch1` to it
   (typically by having it reviewed / creating a pull-request). Changes from
   different branches come into master this way (via merges). Your branch can
-  keep updated with `master` by merging back `master` to your branch, OR
-  alternatively by `rebase`ing against it. Note that rebasing will cause all
+  keep updated with `master` by merging `master` to your branch, OR
+  alternatively, by `rebase`ing against it. Note that rebasing will cause all
   commits since divergence from `master` to be re-committed. This will create a mess
   if your local branch is tracking a remote branch and you push to the remote
   branch. Use `git merge` to merge from `master`, instead. Some teams do
-  not recommend merging `master` to your branch (but ask you to rebase instead)
+  not however recommend merging `master` to your branch (but ask you to rebase instead)
   because merging creates what is called a merge commit.
   * Cherry pick a change from another branch, instead of merging all of it. i.e.
   Instead of all changes "till" a specific commit (or the HEAD)
