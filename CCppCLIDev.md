@@ -64,7 +64,7 @@ you a user-friendly menu to select the right one, I suggest using
   * Edit `~/.emacs.d/etags-search.el` to fix the path to `etags-select.el`.
   * Add the following line into your `~/.emacs`. Use absolute path if it
     doesn't work with `~/`. 
-    ```
+    ``` lisp
     (load-file "~/emacs.d/etags-search.el")
     ```
 
@@ -90,7 +90,7 @@ when you compile the file) automatically and mark them (error squiggles) in the 
 For this feature to work, you will need the `irony` and `flycheck-irony` Emacs packages
 (already installed if you followed the preparation instructions above). `irony` requires
 that the `irony-server` be built locally. This is a one-time task and can be done as
-follows.
+follows (inside Emacs).
 
   - <kbd>M-x</kbd> `irony-install-server`
 
@@ -129,7 +129,7 @@ two ways to specify the compilation command that can be used for running the err
   be generated in multiple ways, couple of which I convey here.
     * If you're using `CMake` in your project 
       * Add this line to your project's `CMakeLists.txt`.
-        ```
+        ```cmake
         set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
         ```
       * Alternatively, you can specify `-DCMAKE_EXPORT_COMPILE_COMMANDS=ON` when you invoke `cmake` to setup your project.
