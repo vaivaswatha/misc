@@ -1,8 +1,9 @@
 ## A list of useful Emacs shortcuts
 
+On PCs `M` maps to the `alt` key and `C` to the `ctrl` key.
+
 - `M-x` For entering commands (gdb, shell, compile etc).
 - `C-g` abort a command.
-- `M-.` Find tags. (must run etags before doing this).
 - `C-x C-s` Save buffer.
 - `C-x C-w` Save as
 - `C-x C-c` Exit emacs
@@ -36,6 +37,9 @@
 - `C-l` Reposition screen for current line
 - `C-s` Search for a pattern. Can you repeatedly to continue search.
 - `C-r` Search for a pattern in the backward direction. Can you repeatedly to continue search
+- `M-.` Find symbol in TAGS.
+- `C-M-,` Go to previous marked position. Useful when you want to go back after 
+    following up a symbol definition with `M-.`.
 - `C-x C-x` Goto previous cursor position (that was marked with a C^space or other means)
 - `C-c C-z` Open interactive python interpreter.
 - `M-n` When viewing a .diff file, go to the next diff.
@@ -48,4 +52,3 @@
 - ediff-buffers: Hit `M-x` and type "ediff-buffers". Its a visual diff tool.
 
 - `emacs -nw` Open emacs in non-X mode. (can be done by unsetting $DISPLAY also).
-
