@@ -199,3 +199,7 @@ to you as well.
     ;;;; For a better buffer selector
     (global-set-key (kbd "C-x C-b") 'bs-show)
     ```
+## Useful references
+  - https://tuhdo.github.io/c-ide.html
+  - http://martinsosic.com/development/emacs/2017/12/09/emacs-cpp-ide.html
+  - https://gist.github.com/soonhokong/7c2bf6e8b72dbc71c93b
