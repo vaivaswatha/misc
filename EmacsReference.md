@@ -38,7 +38,7 @@ On PCs <kbd>M</kbd> maps to the <kbd>alt</kbd> key and
 - <kbd>C-l</kbd> Reposition screen for current line
 - <kbd>C-s</kbd> Search for a pattern. Can you repeatedly to continue search.
 - <kbd>C-r</kbd> Search for a pattern in the backward direction. Can you repeatedly to continue search
-- <kbd>M-.</kbd> Find symbol in TAGS.
+- <kbd>M-.</kbd> Find symbol in [TAGS](https://github.com/vaivaswatha/misc/blob/master/CCppCLIDev.md).
 - <kbd>C-M-,</kbd> Go to previous marked position. Useful when you want to go back after 
     following up a symbol definition with <kbd>M-.</kbd>
 - <kbd>C-x C-x</kbd> Goto previous cursor position (that was marked with a C^space or other means)
