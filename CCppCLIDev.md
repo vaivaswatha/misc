@@ -104,7 +104,7 @@ on any C/C++ files that you open.
 (add-hook 'c++-mode-hook 'irony-mode)
 (add-hook 'c-mode-hook 'irony-mode)
 (add-hook 'objc-mode-hook 'irony-mode)
-;; For figuring out compile commands from compile_commands.json or .clang_complete databases.
+;; For figuring out compile commands from compile_commands.json or compile_flags.txt databases.
 ;; If doesn't work (can't find the databases), use irony-cdb-json-add-compile-commands-path.
 (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
 (add-hook 'c++-mode-hook 'flycheck-mode)
