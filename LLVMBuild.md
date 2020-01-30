@@ -16,7 +16,7 @@ The LLVM monorepo is quite huge, and for most purposes, a shallow clone is good 
   - `cd $LLVM_PROJECT`
   - `mkdir build install` Create directories for the build and install.
   - `cd build`
-  - `cmake -G "Ninja" -DCMAKE_INSTALL_PREFIX=../install -DCMAKE_BUILD_TYPE="Debug" -DLLVM_TARGETS_TO_BUILD="Native" -DCMAKE_CXX_FLAGS=" -gdwarf-4 " ../llvm`
+  - `cmake -G "Ninja" -DCMAKE_INSTALL_PREFIX=../install -DCMAKE_BUILD_TYPE="Debug" -DLLVM_TARGETS_TO_BUILD="Native" -DCMAKE_CXX_FLAGS=" -ggdb3 -gdwarf-4 " ../llvm`
   - `ninja install`. This will build and install LLVM to `${LLVM_PROJECT}/install`.
 
 
