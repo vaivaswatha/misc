@@ -180,7 +180,7 @@ To be able to use plain `switch` statements, we need to ensure the following
   1. The safety provided by `std::variant` in packing (creating) and unpacking
   objects must be retained.
   2. Each `case` of the `switch` must use a symbolic name, rather than integers.
-  This means that switching over `std::variant<Types...>::index` is not an option.
+  This means that switching over to `std::variant::index` is not an option.
   3. The compiler must warn or error out when we have unhandled alternatives.
 
 Ensuring 1. is simple as long as we continue to use `std::variant`. So let's start
