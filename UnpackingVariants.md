@@ -186,7 +186,8 @@ To be able to use plain `switch` statements, we need to ensure the following
 Ensuring 1. is simple as long as we continue to use `std::variant`. So let's start
 with 2. To have each `case` of the `switch` be a symbolic name, we need a way to
 translate the constituent type (assume all unique types in the variant) into an
-integer. The standard does not provide for such a utility, and hence after some searching around, I found [this](https://stackoverflow.com/a/52303671/2128804).
+integer. The standard does not provide for such a utility, and hence after some 
+searching around, I found [this](https://stackoverflow.com/a/52303671/2128804).
 
 By defining a variadic function template `indexof` as below
 
@@ -207,7 +208,8 @@ constexpr std::size_t indexof() {
 
 ```
 
-we can now translate a variant's constituent type into a constexpr integer index, enabling us to use symbolic names in each `case` of our `switch`.
+we can now translate a variant's constituent type into a constexpr integer index,
+enabling us to use symbolic names in each `case` of our `switch`.
 
 ```cpp
   std:: cout << "Visiting variant using a switch statement\n";
@@ -258,7 +260,8 @@ to `switch` over `enum`s instead of over integers. Though there is such a
 alternatives in the variant is known beforhand, I couldn't figure out a full solution.
 
 I end this article, with a hope that native (and not through library headers) variant
-support for C++ gets implemented, as described [here](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0095r1.html).
+support for C++ gets implemented, as described 
+[here](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0095r1.html).
 
 ## Source code for the example
 Compile this file as `g++ -std=c++17 -Wall visitor.cpp -o visitor.exe`
