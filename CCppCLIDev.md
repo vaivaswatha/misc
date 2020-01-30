@@ -31,7 +31,9 @@ Open emacs and install the following MELPA packages by running
   - <kbd>M-x</kbd> `package-install company-irony`
 
 ## Code browsing with Cscope and TAGS
-You can run the following set of commands (to be put in a script for easy invocation) to build symbol databases for Cscope and TAGS. Two files `cscope.out` and `TAGS` are produced.
+You can run the following set of commands (to be put in a script for easy invocation)
+to build symbol databases for Cscope and TAGS. Two files `cscope.out` and `TAGS` are
+produced.
 
   * `$ctags -eR`
   * `$cscope -bR`
@@ -132,23 +134,25 @@ two ways to specify the compilation command that can be used for running the err
         ```cmake
         set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
         ```
-      * Alternatively, you can specify `-DCMAKE_EXPORT_COMPILE_COMMANDS=ON` when you invoke `cmake` to setup your project.
+      * Alternatively, you can specify `-DCMAKE_EXPORT_COMPILE_COMMANDS=ON`
+        when you invoke `cmake` to setup your project.
     * If you don't use `CMake` in your program but use a simple `Makefile`, you can use
     [compiledb](https://github.com/nickdiego/compiledb). Install `compiledb` using
-    `pip` as `pip install compiledb`. You can then run `compiledb make` instead of `make`. Any arguments you provid to `make` can still be given. `compiledb` will
+    `pip` as `pip install compiledb`. You can then run `compiledb make` instead of `make`.
+    Any arguments you provide to `make` can still be given. `compiledb` will
     intercept every compilation done by `make` and add it to the compilation database.
     * You can also try https://github.com/rizsotto/Bear
-  - `.clang_complete` or `compile_flags.txt`. For small projects where all of your source
+  - `compile_flags.txt` or `.clang_complete`. For small projects where all of your source
   files use the same compilation command, they can all be specified once in a file
-  `.clang_complete` or `compile_flags.txt` in the root of your project. Add each
-  compilation flag in a separate line. Here's an example.
+  named [compile_flags.txt](https://releases.llvm.org/8.0.0/tools/clang/tools/extra/docs/clangd/Installation.html#compile-flags-txt)
+  or [.clang_complete](https://github.com/xavierd/clang_complete/blob/master/README.md#minimum-configuration)
+   in the root of your project. Add each compilation flag in a separate line. Both files
+   use the same format. Here's an example.
     ```
     -std=c++1
     -Ipath/to/include
     -DSOME_DEFINE
     ```
-      * <b>Note</b>: `compile_flags.txt` has the same format as `.clang_complete` but
-       is not yet supported. There's an open [PR](https://github.com/Sarcasm/irony-mode/pull/505) for it.
 
 ## Code completion
 Assuming that you performed <kbd>M-x</kbd> `irony-install-server` from the previous
@@ -194,7 +198,8 @@ to you as well.
     ;; matching parenthesis
     (show-paren-mode 1)
     ```
-  * A better [buffer selector](https://www.emacswiki.org/emacs/BufferSelection) (when you type <kbd>C-c C-b</kbd>).
+  * A better [buffer selector](https://www.emacswiki.org/emacs/BufferSelection)
+    (when you type <kbd>C-c C-b</kbd>).
     ```lisp
     ;;;; For a better buffer selector
     (global-set-key (kbd "C-x C-b") 'bs-show)
