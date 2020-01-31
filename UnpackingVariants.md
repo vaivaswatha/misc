@@ -352,9 +352,6 @@ int main()
     std::cout << "fragile: density=" << f.density << "\n";
     break;
   }
-  default:
-    std::cout << "Unhandled variant member\n";
-    break;
   }
 
   return 0;
