@@ -69,7 +69,8 @@ you will need to clone it to have a copy locally.
     - `$git diff master` (compare working directory with branch `master`)
   * Show the details of a particular commit, including the code diff.
     - `$git show SHA1`
-  * Checkout old versions: This command will checkout an older version into a new branch. Here SHA1 is the hash of the older revision you want to check out (this can be obtained from `git log`).
+  * Checkout old versions: This command will checkout an older version into a new branch. 
+  Here SHA1 is the hash of the older revision you want to check out (this can be obtained from `git log`).
     - `$git checkout -b <NewBranchName> SHA1`
   * Switch branches. You need to have all files committed before you can switch branches.
     - `$git checkout <BranchName>`
@@ -127,6 +128,10 @@ you will need to clone it to have a copy locally.
   new files from the staged area to the commit or editing the commit message,
  can be done with this command:
     - `$git commit --amend`
+  * If the repository you are cloning has submodules, add `--recurse-submodules`
+  to the clone command. If you have already cloned and missed adding this flag,
+  you can fetch the submodules as 
+    - `git submodule update --init --recursive`
   * Pretty print (branch graph etc) git log. Use command "git lg" after running
   this command
     - `$git config --global alias.lg "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"`
