@@ -23,6 +23,7 @@ The LLVM monorepo is quite huge, and for most purposes, a shallow clone is good 
 Useful additional flags when configuring (`cmake`)
   - `-DCMAKE_BUILD_TYPE=[Release|Debug|RelWithDebInfo]`
   - `-DLLVM_USE_LINKER=gold` to use the `gold` linker which is faster and requires lesser memory.
+   I suggest using this (requires the `gold` linker to be installed on your system).
   - `-DBUILD_SHARED_LIBS=1` Builds LLVM as a shared library. This can potentially bring
   down the memory requirements for your build. It may in turn add a delay when starting
   your debugger.
