@@ -9,7 +9,7 @@
 
 ## Shallow Clone
 The LLVM monorepo is quite huge, and for most purposes, a shallow clone is good enough.
-  - `git clone --depth 1 https://gitlab.com/compiler-tree/llvm-project.git $LLVM_PROJECT`
+  - `git clone --depth 1 https://github.com/llvm/llvm-project.git $LLVM_PROJECT`
   - Provide additional argument `--branch llvmorg-9.0.1` to the previous command
     if you want to checkout the tagged release `llvmorg-9.0.1`.
 
