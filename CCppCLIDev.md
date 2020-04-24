@@ -67,7 +67,8 @@ you a user-friendly menu to select the right one, I suggest using
   * Add the following line into your `~/.emacs`. Use absolute path if it
     doesn't work with `~/`. 
     ``` lisp
-    (load-file "~/emacs.d/etags-search.el")
+    (add-hook 'c-mode-hook (lambda () (load-file "~/.emacs.d/etags-search.el")))
+    (add-hook 'c++-mode-hook (lambda () (load-file "~/.emacs.d/etags-search.el")))
     ```
 
 You can now type <kbd>M-?</kbd> on any symbol in your program (or alternatively specify
