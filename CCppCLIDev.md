@@ -36,7 +36,7 @@ You can run the following set of commands (to be put in a script for easy invoca
 to build symbol databases for Cscope and gnu-global tags. The files `cscope.out` and
 `GPATH`, `GRTAGS` and `GTAGS` are produced.
 
-  * `$ggtags .`
+  * `$gtags .`
   * `$cscope -bR`
 
 I suggest adding these filenames to the `.gitignore` file of your project (or `~/.gitignore`).
