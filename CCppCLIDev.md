@@ -10,7 +10,7 @@ Many parts of the article should work well for Vim too.
 
 ## Preparation
 You will need the following OS packages:
-  - `sudo apt-get install emacs cscope exuberant-ctags libclang-dev build-essentials cmake`
+  - `sudo apt-get install emacs cscope exuberant-ctags global libclang-dev build-essentials cmake`
 
 ### Emacs packages
 Add the following lines to your `~/.emacs` file to have the MELPA repository
@@ -26,21 +26,20 @@ accessible and to install packages from it.
 
 Open emacs and install the following MELPA packages by running 
   - <kbd>M-x</kbd> `package-referesh-contents`
+  - <kbd>M-x</kbd> `package-install ggtags`
   - <kbd>M-x</kbd> `package-install irony`
   - <kbd>M-x</kbd> `package-install flycheck-irony`
   - <kbd>M-x</kbd> `package-install company-irony`
 
-## Code browsing with Cscope and TAGS
+## Code browsing with Cscope and GNU Global
 You can run the following set of commands (to be put in a script for easy invocation)
-to build symbol databases for Cscope and TAGS. Two files `cscope.out` and `TAGS` are
-produced.
+to build symbol databases for Cscope and gnu-global tags. The files `cscope.out` and
+`GPATH`, `GRTAGS` and `GTAGS` are produced.
 
-  * `$ctags -eR`
+  * `$ggtags .`
   * `$cscope -bR`
 
-The `-e` option to `ctags` specifies producing `TAGS` for Emacs. It can be
-skipped if you want to build `TAGS` for Vim. I suggest adding `TAGS` and
-`cscope.out` to the `.gitignore` file of your project (or `~/.gitignore`).
+I suggest adding these filenames to the `.gitignore` file of your project (or `~/.gitignore`).
 You may also add these commands to your `Makefile` to keep the tags updated.
 
 ### Code browsing with Cscope
@@ -50,31 +49,23 @@ there such as find definitions, references, includes etc. You can also pipe
 the output of your queries to command such as `grep` to filter, by hitting `|`
 once you get an output and typing the command.
 
-### Emacs and TAGS
-By default, Emacs knows to look for the TAGS file only in the directory of the
-open file. Most often this is not good enough as your project may have a hierarchy
-of directories with the TAGS file generated at the project root. To enable Emacs
-to search in the parent directories of a file for the TAGS file, you must use
-the code in [etags-search.el](https://www.emacswiki.org/emacs/EtagsSelect#toc2).
-Similarly, when a symbol has multiple definitions, to enable Emacs to provide
-you a user-friendly menu to select the right one, I suggest using
-[etags-select.el](https://www.emacswiki.org/emacs/etags-select.el).
+### Emacs and ggtags
 
-  * Download `etags-select.el` to `~/.emacs.d/`
-  * Copy the above `etags-search.el` code and place it in a file 
-    `etags-search.el` in `~/.emacs.d/`
-  * Edit `~/.emacs.d/etags-search.el` to fix the path to `etags-select.el`.
-  * Add the following line into your `~/.emacs`. Use absolute path if it
-    doesn't work with `~/`. 
-    ``` lisp
-    (add-hook 'c-mode-hook (lambda () (load-file "~/.emacs.d/etags-search.el")))
-    (add-hook 'c++-mode-hook (lambda () (load-file "~/.emacs.d/etags-search.el")))
-    ```
+Insert the following piece of code in your `~/.emacs` file to enable the Emacs plugin
+`ggtags` for GNU Global for all C/C++ files.
 
-You can now type <kbd>M-?</kbd> on any symbol in your program (or alternatively specify
-it by typing <kbd>M-.</kbd> and typing in the symbol) and hit enter. If there is only
-a single definition, you will be taken there directly. Otherwise, you'll get
-a menu of possible targets. By typing in the number, you'll be taken there.
+```lisp
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
+              (ggtags-mode 1))))
+
+```
+
+You can now type <kbd>M-.</kbd> to go to the definition of the current symbol.
+You can go back to where you started the search using <kbd>M-,</kbd>. Use
+<kbd>M-?</kbd> to find all references to a symbol. For more navigation tips,
+see the [ggtags page](https://github.com/leoliu/ggtags#usage) for more tips.
 
 ## Debugging with Emacs
 One of the most useful features of Emacs is its integration with GDB. Even with
