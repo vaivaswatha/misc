@@ -65,7 +65,7 @@ Insert the following piece of code in your `~/.emacs` file to enable the Emacs p
 You can now type <kbd>M-.</kbd> to go to the definition of the current symbol.
 You can go back to where you started the search using <kbd>M-,</kbd>. Use
 <kbd>M-?</kbd> to find all references to a symbol. For more navigation tips,
-see the [ggtags page](https://github.com/leoliu/ggtags#usage) for more tips.
+see the [ggtags page](https://github.com/leoliu/ggtags#usage).
 
 ## Debugging with Emacs
 One of the most useful features of Emacs is its integration with GDB. Even with
