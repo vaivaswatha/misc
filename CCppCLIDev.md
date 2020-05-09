@@ -10,7 +10,7 @@ Many parts of the article should work well for Vim too.
 
 ## Preparation
 You will need the following OS packages:
-  - `sudo apt-get install emacs cscope exuberant-ctags global libclang-dev build-essentials cmake`
+  - `sudo apt-get install emacs cscope exuberant-ctags global libclang-dev build-essential cmake`
 
 ### Emacs packages
 Add the following lines to your `~/.emacs` file to have the MELPA repository
