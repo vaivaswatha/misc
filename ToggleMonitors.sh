@@ -43,22 +43,22 @@ then
     # Switch to internal only
     xrandr --output "$internal" --auto --output "$external" --off
     echo -n "internal_only" > $state_file
-    echo "Now set to internal only"
+    notify-send "ToggleMonitors: Set to internal only"
 elif [[ $state == "internal_only" ]]
 then
     # Switch to external_primary
     xrandr --output "$external" --auto --primary --output "$internal" $position "$external" 
     echo -n "external_primary" > $state_file
-    echo "Now set to external primary"
+    notify-send "ToggleMonitors: Set to external primary"
 elif [[ $state == "external_primary" ]]
 then
     # Switch to external_only
     xrandr --output "$internal" --off --output "$external" --auto
     echo -n "external_only" > $state_file
-    echo "Now set to external only"
+    notify-send "ToggleMonitors: Set to external only"
 else
     # Switch to internal_primary
     xrandr --output "$internal" --auto --primary --output "$external" $reverse_position "$internal" --auto
     echo -n "internal_primary" > $state_file
-    echo "Now set to internal primary"
+    notify-send "ToggleMonitors: Set to internal primary"
 fi
