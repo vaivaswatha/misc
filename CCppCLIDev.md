@@ -141,7 +141,7 @@ two ways to specify the compilation command that can be used for running the err
    in the root of your project. Add each compilation flag in a separate line. Both files
    use the same format. Here's an example.
     ```
-    -std=c++1
+    -std=c++11
     -Ipath/to/include
     -DSOME_DEFINE
     ```
